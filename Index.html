@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚽ GOLEIRO DE SENHAS 2026 ⚽</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <img src="https://i.imgur.com/8zKzZ3K.png" alt="Josimar Dias" class="goalkeeper">
+                <div>
+                    <h1>GOLEIRO DE SENHAS</h1>
+                    <p class="subtitle">Seleção de Cabo Verde - Copa 2026 🏆</p>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="generator">
+                <div class="password-display" id="password">
+                    Clique em GERAR!
+                </div>
+                
+                <button class="copy-btn" onclick="copyPassword()">📋 COPIAR SENHA</button>
+
+                <div class="controls">
+                    <div class="slider-container">
+                        <label>Comprimento: <span id="lengthValue">16</span></label>
+                        <input type="range" id="length" min="8" max="64" value="16" oninput="updateLength(this)">
+                    </div>
+
+                    <div class="options">
+                        <label><input type="checkbox" id="uppercase" checked> Maiúsculas</label>
+                        <label><input type="checkbox" id="lowercase" checked> Minúsculas</label>
+                        <label><input type="checkbox" id="numbers" checked> Números</label>
+                        <label><input type="checkbox" id="symbols" checked> Símbolos</label>
+                        <label><input type="checkbox" id="avoidAmbiguous" checked> Evitar caracteres ambíguos (0O1lI)</label>
+                    </div>
+                </div>
+
+                <button class="generate-btn" onclick="generatePassword()">
+                    ⚽ GERAR SENHA FORTE ⚽
+                </button>
+
+                <div class="strength">
+                    <p>Força da Senha:</p>
+                    <div class="bar">
+                        <div id="strengthBar" class="strength-fill"></div>
+                    </div>
+                    <p id="strengthText">FORTE 🟡</p>
+                </div>
+            </div>
+
+            <div class="memes">
+                <h3>📣 MEMES DA COPA 2026</h3>
+                <div class="meme">"Essa senha é mais segura que o Josimar defendendo!" 🧤</div>
+                <div class="meme">"Senha fraca = gol contra da vida"</div>
+                <div class="meme">"16+ caracteres = defesa impecável"</div>
+            </div>
+        </main>
+
+        <footer>
+            <p>🔒 Gerador seguro • Boas práticas de segurança</p>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
