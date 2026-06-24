@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚽ GOLEIRO DE SENHAS 2026 ⚽</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        
+        :root {
+            --yellow: #FFCD00;
+            --green: #009C3B;
+            --red: #DA291C;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0A0A0A, #1A1A2E);
+            color: white;
+            font-family: 'Press Start 2P', system-ui;
+            min-height: 100vh;
+            padding: 20px;
+            background-image: 
+                radial-gradient(circle at 50% 20%, rgba(255, 205, 0, 0.1) 0%, transparent 50%),
+                url('https://picsum.photos/id/1015/1920/1080') no-repeat center center fixed;
+            background-size: cover;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(10, 10, 20, 0.95);
+            border: 8px solid var(--yellow);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(255, 205, 0, 0.6);
+        }
+        
+        header {
+            background: linear-gradient(to right, var(--green), var(--yellow), var(--red));
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            text-shadow: 4px 4px 0 #000;
+            color: white;
+        }
+        
+        .goalkeeper {
+            width: 120px;
+            border: 6px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 30px rgba(255, 205, 0, 0.8);
+        }
+        
+        .main {
+            padding: 30px;
+        }
+        
+        .generator {
+            background: #1A1A2E;
+            border: 6px solid var(--yellow);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .password-display {
+            background: #000;
+            border: 6px solid var(--green);
+            padding: 20px;
+            font-size: 1.4rem;
+            font-family: monospace;
+            text-align: center;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            word-break: break-all;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--yellow);
+            color: black;
+            border: none;
+            padding: 8px 16px;
+            font-family: 'Press Start 2P';
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        
+        .options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        
+        input[type="checkbox"] {
+            transform: scale(1.4);
+        }
+        
+        .slider-container {
+            margin: 20px 0;
+        }
+        
+        .length {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        input[type="range"] {
+            width: 100%;
+            accent-color: var(--yellow);
+        }
+        
+        button {
+            background: var(--yellow);
+            color: black;
+            border: none;
+            padding: 18px 40px;
+            font-family: 'Press Start 2P';
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            margin: 10px 0;
+            transition: all 0.2s;
+            text-transform: uppercase;
+        }
+        
+        button:hover {
+            transform: scale(1.05);
+            background: white;
+        }
+        
+        .strength {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .bar {
+            height: 25px;
+            background: #333;
+            border: 3px solid white;
+            display: flex;
+            overflow: hidden;
+        }
+        
+        .strength-fill {
+            height: 100%;
+            width: 0%;
+            transition: width 0.4s;
+        }
+        
+        .memes {
+            background: #16213E;
+            padding: 20px;
+            border: 4px dashed var(--yellow);
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        
+        .meme {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            margin: 12px 0;
+            border-left: 6px solid var(--red);
+            font-size: 0.95rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+        
+        .flag {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <img src="https://i.imgur.com/8zKzZ3K.png" alt="Josimar Dias" class="goalkeeper" 
+                     onerror="this.src='https://via.placeholder.com/120/FFCD00/000?text=1'">
+                <div>
+                    <h1>GOLEIRO DE SENHAS</h1>
+                    <p style="color: white; font-size: 1rem;">Cabo Verde Seleção 2026 🏆</p>
+                </div>
+            </div>
+        </header>
+        
+        <div class="main">
+            <div class="generator">
+                <div class="password-display" id="password">
+                    Clique em GERAR!
+                </div>
+                <button onclick="copyPassword()">📋 COPIAR SENHA</button>
+                
+                <div class="slider-container">
+                    <div class="length">
+                        <span>Comprimento</span>
+                        <span id="lengthValue">16</span>
+                    </div>
+                    <input type="range" id="length" min="8" max="64" value="16" oninput="updateLength(this)">
+                </div>
+                
+                <div class="options">
+                    <label>
+                        <input type="checkbox" id="uppercase" checked> ABC Maiúsculas
+                    </label>
+                    <label>
+                        <input type="checkbox" id="lowercase" checked> abc Minúsculas
+                    </label>
+                    <label>
+                        <input type="checkbox" id="numbers" checked> 123 Números
+                    </label>
+                    <label>
+                        <input type="checkbox" id="symbols" checked> !@# Símbolos
+                    </label>
+                    <label>
+                        <input type="checkbox" id="avoidAmbiguous"> Evitar 0O1lI (boa prática)
+                    </label>
+                </div>
+                
+                <button onclick="generatePassword()">⚽ GERAR NOVA SENHA FORTE ⚽</button>
+                
+                <div class="strength">
+                    <p>Força da Senha:</p>
+                    <div class="bar">
+                        <div class="strength-fill" id="strengthBar" style="background: #00ff00; width: 60%"></div>
+                    </div>
+                    <p id="strengthText" style="margin-top: 8px; font-size: 0.9rem;">BOM 🟡</p>
+                </div>
+            </div>
+            
+            <div class="memes">
+                <h3 style="color: var(--yellow); margin-bottom: 15px;">📣 MEMES DA COPA 2026 📣</h3>
+                <div class="meme">
+                    <strong>Josimar diz:</strong> "Essa senha é mais segura que meu gol contra o Brasil! 🧤"
+                </div>
+                <div class="meme">
+                    <strong>Meme do dia:</strong> "Senha fraca = gol contra. Senha forte = defesa impecável!"
+                </div>
+                <div class="meme">
+                    <strong>Dica de craque:</strong> Use pelo menos 16 caracteres. Quanto maior, mais difícil pro adversário!
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>🔒 Gerador com melhores práticas de segurança • Cabo Verde na Copa 2026 • Feito com ❤️ para torcida</p>
+            <p>Evite reutilizar senhas • Use gerenciador de senhas</p>
+        </footer>
+    </div>
+
+    <script>
+        const chars = {
+            uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+            lowercase: "abcdefghijklmnopqrstuvwxyz",
+            numbers: "0123456789",
+            symbols: "!@#$%^&*()_+-=[]{}|;:,.<>/?",
+            ambiguous: "0O1lI"
+        };
+
+        function updateLength(slider) {
+            document.getElementById("lengthValue").textContent = slider.value;
+        }
+
+        function getStrength(password) {
+            let score = 0;
+            if (password.length >= 12) score += 30;
+            if (password.length >= 16) score += 30;
+            if (/[A-Z]/.test(password)) score += 15;
+            if (/[a-z]/.test(password)) score += 15;
+            if (/\d/.test(password)) score += 15;
+            if (/[^A-Za-z0-9]/.test(password)) score += 15;
+            
+            if (score >= 90) return {text: "IMBATÍVEL 🟢", color: "#00ff00", width: "100%"};
+            if (score >= 70) return {text: "MUITO FORTE 🟡", color: "#ffcc00", width: "80%"};
+            if (score >= 50) return {text: "FORTE 🟠", color: "#ff8800", width: "65%"};
+            return {text: "MELHORAR 🔴", color: "#ff0000", width: "40%"};
+        }
+
+        function generatePassword() {
+            const length = parseInt(document.getElementById("length").value);
+            const upper = document.getElementById("uppercase").checked;
+            const lower = document.getElementById("lowercase").checked;
+            const num = document.getElementById("numbers").checked;
+            const sym = document.getElementById("symbols").checked;
+            const avoidAmb = document.getElementById("avoidAmbiguous").checked;
+            
+            let pool = "";
+            if (upper) pool += chars.uppercase;
+            if (lower) pool += chars.lowercase;
+            if (num) pool += chars.numbers;
+            if (sym) pool += chars.symbols;
+            
+            if (pool === "") {
+                alert("Selecione pelo menos uma opção!");
+                return;
+            }
+            
+            let password = "";
+            // Garantir pelo menos um de cada tipo selecionado
+            if (upper) password += chars.uppercase[Math.floor(Math.random() * chars.uppercase.length)];
+            if (lower) password += chars.lowercase[Math.floor(Math.random() * chars.lowercase.length)];
+            if (num) password += chars.numbers[Math.floor(Math.random() * chars.numbers.length)];
+            if (sym) password += chars.symbols[Math.floor(Math.random() * chars.symbols.length)];
+            
+            while (password.length < length) {
+                let char = pool[Math.floor(Math.random() * pool.length)];
+                if (avoidAmb && chars.ambiguous.includes(char)) continue;
+                password += char;
+            }
+            
+            // Embaralhar
+            password = password.split('').sort(() => Math.random() - 0.5).join('');
+            // Cortar no tamanho exato
+            password = password.substring(0, length);
+            
+            const display = document.getElementById("password");
+            display.textContent = password;
+            
+            // Mostrar força
+            const strength = getStrength(password);
+            const bar = document.getElementById("strengthBar");
+            bar.style.width = strength.width;
+            bar.style.background = strength.color;
+            document.getElementById("strengthText").textContent = strength.text;
+            
+            // Efeito de gol
+            display.style.animation = "none";
+            setTimeout(() => {
+                display.style.animation = "goal 0.6s";
+            }, 10);
+        }
+
+        function copyPassword() {
+            const pass = document.getElementById("password").textContent;
+            if (pass.length < 5 || pass === "Clique em GERAR!") {
+                alert("Gere uma senha primeiro!");
+                return;
+            }
+            
+            navigator.clipboard.writeText(pass).then(() => {
+                const btn = event.target;
+                const original = btn.textContent;
+                btn.textContent = "✅ COPIADO!";
+                setTimeout(() => btn.textContent = original, 2000);
+            });
+        }
+
+        // Gerar senha inicial
+        window.onload = function() {
+            setTimeout(() => {
+                generatePassword();
+            }, 800);
+        };
+
+        // Adicionar keyframes via JS
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes goal {
+                0% { transform: scale(0.8); }
+                50% { transform: scale(1.15); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
